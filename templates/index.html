@@ -1,9 +1,10 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="manifest" href="./manifest.json">
+  <link rel="manifest" href="{% static 'manifest.json' %}">
 
 <meta name="theme-color" content="#2563eb">
 
@@ -13,8 +14,8 @@
       content="Portfolio">
 
 <link rel="apple-touch-icon"
-      href="./icons/icon-192.jpg">
-  <title>Your Name | Portfolio</title>
+      href="{% static 'icons/icon-192.jpg' %}">
+  <title>Amit Biswas | Portfolio</title>
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
 
@@ -101,7 +102,7 @@
 <body>
 
 <nav>
-  <span class="logo">YourName</span>
+  <span class="logo">Amit Biswas</span>
   <div>
     <a href="#about">About</a>
     <a href="#skills">Skills</a>
