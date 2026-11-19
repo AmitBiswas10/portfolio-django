@@ -209,9 +209,19 @@
     <div class="card">
 
         <p>📧
-            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=amitbiswas8916@gmail.com" target="_blank">
-                Email Me
-            </a>
+            <a id="email-me-btn" href="https://mail.google.com/mail/?view=cm&fs=1&to=amitbiswas8916@gmail.com" target="_blank">
+  Email Me
+</a>
+
+<script>
+  const emailBtn = document.getElementById("email-me-btn");
+  const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+
+  if (isMobile) {
+    emailBtn.href = "mailto:amitbiswas8916@gmail.com";
+    emailBtn.removeAttribute("target");
+  }
+</script>
         </p>
 
         <p>🔗
