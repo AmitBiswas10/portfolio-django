@@ -1,12 +1,11 @@
 
-const CACHE_NAME = "portfolio-dashboard-v1";
+const CACHE_NAME = "portfolio-dashboard-v2";
 
 const APP_FILES = [
-    "./",
-    "./index.html",
-    "./manifest.json",
-    "./icons/icon-192.png",
-    "./icons/icon-512.png"
+    "/",
+    "/static/manifest.json",
+    "/static/images/icon-192.png",
+    "/static/images/icon-512.png"
 ];
 
 // Install service worker and cache app files
@@ -44,12 +43,7 @@ self.addEventListener("fetch", event => {
 
     event.respondWith(
         caches.match(event.request).then(cachedResponse => {
-            return cachedResponse ||
-                fetch(event.request).catch(() => {
-                    if (event.request.mode === "navigate") {
-                        return caches.match("./index.html");
-                    }
-                });
+            return cachedResponse || fetch(event.request);
         })
     );
 });
